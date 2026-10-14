@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: my-web-app
+  name: my-web-app
+  namespace: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-web-app
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: my-web-app
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+status: {}
